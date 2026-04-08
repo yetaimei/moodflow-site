@@ -230,8 +230,8 @@
 
       .hero-media {
         display: grid;
-        grid-template-columns: 1.05fr 0.85fr 0.85fr;
-        gap: 18px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
         align-items: start;
         align-content: start;
       }
@@ -243,27 +243,19 @@
       }
 
       .hero-1 {
-        grid-column: 1;
-        grid-row: 1 / span 2;
-        transform: translateY(18px) rotate(-2deg);
+        transform: translateY(8px) rotate(-1deg);
       }
 
       .hero-2 {
-        grid-column: 2;
-        grid-row: 1;
-        transform: translateY(-4px);
+        transform: translateY(-2px);
       }
 
       .hero-3 {
-        grid-column: 3;
-        grid-row: 1 / span 2;
-        transform: translateY(40px) rotate(2deg);
+        display: none;
       }
 
       .hero-video {
-        grid-column: 2;
-        grid-row: 2;
-        transform: translateY(18px) rotate(-1deg);
+        display: none;
       }
 
       .hero-badge {
@@ -319,7 +311,7 @@
       }
 
       .gallery {
-        columns: 3 320px;
+        columns: 2 320px;
         column-gap: 18px;
       }
 
@@ -367,8 +359,8 @@
       }
 
       .mood-grid {
-        columns: 2 220px;
-        column-gap: 16px;
+        columns: 1 220px;
+        column-gap: 0;
       }
 
       .mood-grid img {
@@ -563,24 +555,6 @@
             width="1284"
             height="2778"
           />
-          <video
-            class="hero-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            poster="assets/screenshots/live-app.webp"
-          >
-            <source src="assets/video/moodflow-demo.mp4" type="video/mp4" />
-          </video>
-          <img
-            class="hero-3"
-            src="assets/screenshots/trend-view.webp"
-            alt="MoodFlow emotional patterns trend screen"
-            width="1284"
-            height="2778"
-          />
           <div class="hero-badge">
             <img
               src="assets/ui/mascot-anxious.webp"
@@ -633,19 +607,13 @@
           </figure>
           <figure class="shot">
             <img
-              src="assets/screenshots/emotion-jar.webp"
-              alt="MoodFlow emotion journal jar screen"
+              src="assets/screenshots/checkin-detail.webp"
+              alt="MoodFlow check-in detail screen"
               width="1284"
               height="2778"
               loading="lazy"
             />
-            <figcaption>An emotion journal view that captures more than simple mood scores.</figcaption>
-          </figure>
-          <figure class="shot">
-            <video controls playsinline preload="metadata" poster="assets/screenshots/stats-dashboard.webp">
-              <source src="assets/video/moodflow-demo.mp4" type="video/mp4" />
-            </video>
-            <figcaption>A short app walkthrough video, kept lightweight for the landing page.</figcaption>
+            <figcaption>A focused check-in flow for fast logging with richer emotional detail.</figcaption>
           </figure>
           <figure class="shot">
             <img
@@ -656,26 +624,6 @@
               loading="lazy"
             />
             <figcaption>Trend charts and totals that reveal emotional patterns over time.</figcaption>
-          </figure>
-          <figure class="shot">
-            <img
-              src="assets/screenshots/streaks-view.webp"
-              alt="MoodFlow streaks view"
-              width="1284"
-              height="2778"
-              loading="lazy"
-            />
-            <figcaption>Streaks and milestones that support a consistent daily habit.</figcaption>
-          </figure>
-          <figure class="shot">
-            <img
-              src="assets/screenshots/trend-view.webp"
-              alt="MoodFlow trend view"
-              width="1284"
-              height="2778"
-              loading="lazy"
-            />
-            <figcaption>A compact trend view that shows how moods evolve across time.</figcaption>
           </figure>
         </div>
       </section>
@@ -697,17 +645,10 @@
           </div>
           <div class="mood-grid">
             <img
-              src="assets/ui/mascot-anxious.webp"
-              alt="MoodFlow anxious mascot illustration"
-              width="1024"
-              height="1024"
-              loading="lazy"
-            />
-            <img
-              src="assets/ui/mascot-tired.webp"
-              alt="MoodFlow tired mascot illustration"
-              width="1024"
-              height="1024"
+              src="assets/screenshots/trend-view.webp"
+              alt="MoodFlow trend view for emotional patterns"
+              width="1284"
+              height="2778"
               loading="lazy"
             />
           </div>
