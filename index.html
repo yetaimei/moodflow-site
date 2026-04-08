@@ -22,7 +22,7 @@
     <meta property="og:site_name" content="MoodFlow" />
     <meta
       property="og:image"
-      content="https://yetaimei.github.io/moodflow-site/assets/screenshots/hero-overview.webp"
+      content="https://yetaimei.github.io/moodflow-site/assets/screenshots/en-01-hero-1284x2778.png"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="MoodFlow - Mood Tracker and Emotion Journal for iPhone" />
@@ -32,10 +32,20 @@
     />
     <meta
       name="twitter:image"
-      content="https://yetaimei.github.io/moodflow-site/assets/screenshots/hero-overview.webp"
+      content="https://yetaimei.github.io/moodflow-site/assets/screenshots/en-01-hero-1284x2778.png"
     />
     <link rel="icon" href="assets/ui/app-icon.png" />
     <link rel="apple-touch-icon" href="assets/ui/app-icon.png" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78KW2G06R9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-78KW2G06R9");
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -45,14 +55,14 @@
             "name": "MoodFlow",
             "applicationCategory": "HealthApplication",
             "operatingSystem": "iOS",
-            "image": "https://yetaimei.github.io/moodflow-site/assets/screenshots/hero-overview.webp",
+            "image": "https://yetaimei.github.io/moodflow-site/assets/screenshots/en-01-hero-1284x2778.png",
             "description": "MoodFlow is a mood tracker and emotion journal for iPhone that helps people log feelings, track detailed emotions, and understand emotional patterns over time.",
             "offers": {
               "@type": "Offer",
               "price": "0",
               "priceCurrency": "USD"
             },
-            "downloadUrl": "https://apps.apple.com/us/app/id6755678705"
+            "downloadUrl": "https://apps.apple.com/us/app/moodflow-mood-tracker-journal/id6755678705?ppid=54b1b9c3-e3b8-4543-8ce9-d850d7b2e02f"
           },
           {
             "@type": "FAQPage",
@@ -311,13 +321,13 @@
       }
 
       .gallery {
-        columns: 2 320px;
-        column-gap: 18px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
       }
 
       .shot {
-        break-inside: avoid;
-        margin: 0 0 18px;
+        margin: 0;
       }
 
       .shot img,
@@ -340,10 +350,7 @@
       }
 
       .story {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 28px;
-        align-items: start;
+        display: block;
       }
 
       .story p {
@@ -361,18 +368,6 @@
 
       .story li + li {
         margin-top: 6px;
-      }
-
-      .mood-grid {
-        columns: 1 220px;
-        column-gap: 0;
-      }
-
-      .mood-grid img {
-        width: 100%;
-        margin: 0 0 16px;
-        border-radius: 24px;
-        box-shadow: 0 12px 28px rgba(52, 27, 40, 0.1);
       }
 
       .faq-list {
@@ -437,9 +432,12 @@
           order: -1;
         }
 
-        .bullet-row,
-        .story {
+        .bullet-row {
           grid-template-columns: 1fr;
+        }
+
+        .gallery {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
@@ -505,6 +503,10 @@
         .section {
           margin-top: 56px;
         }
+
+        .gallery {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -531,7 +533,7 @@
           <div class="cta-row">
             <a
               class="button button-primary"
-              href="https://apps.apple.com/us/app/id6755678705"
+              href="https://apps.apple.com/us/app/moodflow-mood-tracker-journal/id6755678705?ppid=54b1b9c3-e3b8-4543-8ce9-d850d7b2e02f"
               target="_blank"
               rel="noreferrer"
             >
@@ -548,14 +550,14 @@
         <div class="hero-media" aria-label="MoodFlow product collage">
           <img
             class="hero-1"
-            src="assets/screenshots/checkin-detail.webp"
+            src="assets/screenshots/en-02-checkin-1284x2778.png"
             alt="MoodFlow check-in screen for logging feelings"
             width="1284"
             height="2778"
           />
           <img
             class="hero-2"
-            src="assets/screenshots/hero-overview.webp"
+            src="assets/screenshots/en-01-hero-1284x2778.png"
             alt="MoodFlow mood tracker overview screen"
             width="1284"
             height="2778"
@@ -602,7 +604,7 @@
         <div class="gallery">
           <figure class="shot">
             <img
-              src="assets/screenshots/live-app.webp"
+              src="assets/screenshots/en-01-hero-1284x2778.png"
               alt="Live MoodFlow app screenshot"
               width="1206"
               height="2622"
@@ -612,7 +614,7 @@
           </figure>
           <figure class="shot">
             <img
-              src="assets/screenshots/checkin-detail.webp"
+              src="assets/screenshots/en-02-checkin-1284x2778.png"
               alt="MoodFlow check-in detail screen"
               width="1284"
               height="2778"
@@ -622,13 +624,23 @@
           </figure>
           <figure class="shot">
             <img
-              src="assets/screenshots/stats-dashboard.webp"
+              src="assets/screenshots/en-04-stats-1284x2778.png"
               alt="MoodFlow statistics dashboard"
               width="1284"
               height="2778"
               loading="lazy"
             />
             <figcaption>Trend charts and totals that reveal emotional patterns over time.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="assets/screenshots/en-03-jar-1284x2778.png"
+              alt="MoodFlow English hero screen"
+              width="1284"
+              height="2778"
+              loading="lazy"
+            />
+            <figcaption>An emotion jar view with playful visuals for reflection and release.</figcaption>
           </figure>
         </div>
       </section>
@@ -647,15 +659,6 @@
               <li>Richer emotion tags for calm, grateful, anxious, relieved, and overwhelmed.</li>
               <li>Charts and summaries that make emotional patterns easier to spot.</li>
             </ul>
-          </div>
-          <div class="mood-grid">
-            <img
-              src="assets/screenshots/trend-view.webp"
-              alt="MoodFlow trend view for emotional patterns"
-              width="1284"
-              height="2778"
-              loading="lazy"
-            />
           </div>
         </div>
       </section>
@@ -705,7 +708,7 @@
         <div class="cta-row">
           <a
             class="button button-primary"
-            href="https://apps.apple.com/us/app/id6755678705"
+            href="https://apps.apple.com/us/app/moodflow-mood-tracker-journal/id6755678705?ppid=54b1b9c3-e3b8-4543-8ce9-d850d7b2e02f"
             target="_blank"
             rel="noreferrer"
           >
