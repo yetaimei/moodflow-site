@@ -6,37 +6,113 @@
     <title>MoodFlow - Mood Tracker and Emotion Journal for iPhone</title>
     <meta
       name="description"
-      content="MoodFlow is a mood tracker and emotion journal for iPhone that helps you log feelings quickly and understand emotional patterns over time."
+      content="MoodFlow is a mood tracker and emotion journal for iPhone for daily mood tracking, logging feelings, and understanding emotional patterns over time."
     />
     <meta
       name="keywords"
-      content="mood tracker, emotion journal, feelings log, mood calendar, emotional patterns, mood insights, iPhone mood app"
+      content="mood tracker, emotion journal, log feelings, emotional patterns, daily mood tracking, mood journal app, iPhone mood tracker"
     />
+    <meta name="robots" content="index,follow" />
     <meta property="og:title" content="MoodFlow - Mood Tracker and Emotion Journal for iPhone" />
     <meta
       property="og:description"
-      content="Track your mood, log feelings, and understand emotional patterns over time with MoodFlow."
+      content="Daily mood tracking for iPhone. Log feelings, record detailed emotions, and understand emotional patterns over time with MoodFlow."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MoodFlow" />
+    <meta property="og:image" content="assets/screenshots/hero-overview.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MoodFlow - Mood Tracker and Emotion Journal for iPhone" />
+    <meta
+      name="twitter:description"
+      content="Log feelings, track detailed emotions, and see emotional patterns over time with MoodFlow for iPhone."
+    />
+    <meta name="twitter:image" content="assets/screenshots/hero-overview.png" />
+    <link rel="icon" href="assets/ui/app-icon.png" />
+    <link rel="apple-touch-icon" href="assets/ui/app-icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "MoodFlow",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "iOS",
+            "image": "assets/ui/app-icon.png",
+            "description": "MoodFlow is a mood tracker and emotion journal for iPhone that helps people log feelings, track detailed emotions, and understand emotional patterns over time.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "downloadUrl": "https://apps.apple.com/us/app/id6755678705"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is MoodFlow?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "MoodFlow is a mood tracker and emotion journal for iPhone for daily mood tracking, logging feelings, and understanding emotional patterns over time."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How is MoodFlow different from a basic mood tracker?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "MoodFlow combines mood tracking with an emotion journal, richer emotion labels, and visual insights so people can understand more than a simple happy or sad check-in."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I track detailed emotions, not just happy or sad?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. MoodFlow supports more detailed emotions and richer feeling tags so people can log what they actually feel."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does MoodFlow show emotional patterns over time?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. MoodFlow is designed to help people spot emotional patterns through daily logs, a calendar view, and visual summaries over time."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
     <style>
       :root {
-        --bg: #fff8fb;
+        --bg: #fff6f9;
+        --bg-deep: #ffe9f1;
         --surface: rgba(255, 255, 255, 0.82);
         --surface-strong: #ffffff;
-        --text: #261722;
-        --muted: #6e5666;
-        --accent: #ff7aa8;
-        --accent-deep: #ff4b8b;
-        --accent-soft: #ffd6e5;
-        --border: rgba(38, 23, 34, 0.08);
-        --shadow: 0 22px 60px rgba(255, 122, 168, 0.16);
-        --radius-xl: 28px;
-        --radius-lg: 20px;
+        --text: #2d1a25;
+        --muted: #715869;
+        --accent: #ff6d9f;
+        --accent-deep: #f24586;
+        --accent-soft: #ffe1ec;
+        --accent-cool: #8fc7ff;
+        --border: rgba(45, 26, 37, 0.09);
+        --shadow: 0 24px 70px rgba(242, 69, 134, 0.15);
+        --radius-xl: 34px;
+        --radius-lg: 24px;
+        --radius-md: 18px;
       }
 
       * {
         box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
@@ -44,9 +120,15 @@
         font-family: "Avenir Next", "Segoe UI", sans-serif;
         color: var(--text);
         background:
-          radial-gradient(circle at top left, #ffe4ef 0, transparent 34%),
-          radial-gradient(circle at top right, #ffeef5 0, transparent 30%),
-          linear-gradient(180deg, #fff8fb 0%, #fffdfd 100%);
+          radial-gradient(circle at top left, rgba(255, 166, 197, 0.3) 0, transparent 34%),
+          radial-gradient(circle at top right, rgba(187, 224, 255, 0.34) 0, transparent 28%),
+          linear-gradient(180deg, var(--bg) 0%, #fffefe 100%);
+      }
+
+      img,
+      video {
+        display: block;
+        max-width: 100%;
       }
 
       a {
@@ -55,49 +137,103 @@
       }
 
       .page {
-        width: min(1120px, calc(100vw - 32px));
+        width: min(1180px, calc(100vw - 32px));
         margin: 0 auto;
-        padding: 28px 0 56px;
+        padding: 24px 0 56px;
       }
 
       .hero {
+        position: relative;
         display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
         gap: 28px;
-        align-items: center;
-        padding: 28px;
-        border-radius: 36px;
-        background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.72));
+        padding: 32px;
+        border-radius: 40px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.72));
         border: 1px solid var(--border);
         box-shadow: var(--shadow);
-        backdrop-filter: blur(18px);
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: auto auto -80px -80px;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 133, 176, 0.28), transparent 70%);
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+      }
+
+      .brand-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .app-badge {
+        width: 62px;
+        height: 62px;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        box-shadow: 0 16px 38px rgba(52, 26, 39, 0.12);
       }
 
       .eyebrow {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
         padding: 8px 14px;
         border-radius: 999px;
         background: var(--accent-soft);
-        color: #8f2f5f;
+        color: #8d315d;
         font-size: 13px;
         font-weight: 700;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
       }
 
       h1 {
         margin: 18px 0 14px;
-        font-size: clamp(40px, 6vw, 68px);
+        font-size: clamp(42px, 6vw, 70px);
         line-height: 0.95;
-        letter-spacing: -0.05em;
+        letter-spacing: -0.06em;
       }
 
       .subhead {
-        max-width: 650px;
+        max-width: 640px;
         font-size: 20px;
-        line-height: 1.6;
+        line-height: 1.65;
         color: var(--muted);
+      }
+
+      .hero-points {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hero-points li {
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid rgba(45, 26, 37, 0.07);
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .hero-points strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--text);
       }
 
       .cta-row {
@@ -111,8 +247,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
-        min-height: 52px;
+        min-height: 54px;
         padding: 0 22px;
         border-radius: 999px;
         font-weight: 700;
@@ -122,191 +257,236 @@
       .button-primary {
         color: white;
         background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-        box-shadow: 0 16px 34px rgba(255, 75, 139, 0.28);
+        box-shadow: 0 18px 34px rgba(242, 69, 134, 0.28);
       }
 
       .button-secondary {
-        color: var(--text);
         background: var(--surface-strong);
         border-color: var(--border);
       }
 
-      .hero-card {
-        position: relative;
-        min-height: 560px;
-        border-radius: var(--radius-xl);
-        background: linear-gradient(180deg, #ffb3cd 0%, #ff8ab2 100%);
-        overflow: hidden;
-        padding: 22px;
-      }
-
-      .phone {
-        position: absolute;
-        right: 26px;
-        bottom: 0;
-        width: min(88%, 360px);
-        border-radius: 42px 42px 0 0;
-        background: rgba(255,255,255,0.9);
-        border: 8px solid #161116;
-        border-bottom: 0;
-        box-shadow: 0 28px 80px rgba(27, 14, 21, 0.24);
-        overflow: hidden;
-      }
-
-      .phone-notch {
-        width: 132px;
-        height: 30px;
-        border-radius: 999px;
-        background: #100b10;
-        margin: 12px auto 10px;
-      }
-
-      .phone-screen {
-        padding: 18px 18px 28px;
-        background:
-          linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,255,255,0.84)),
-          url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80") center / cover;
-      }
-
-      .calendar {
-        padding: 16px;
-        border-radius: 24px;
-        background: rgba(255,255,255,0.9);
-        box-shadow: 0 16px 36px rgba(148, 91, 118, 0.14);
-      }
-
-      .calendar-title {
-        font-size: 26px;
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 12px;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 6px;
-      }
-
-      .cell {
-        aspect-ratio: 1;
-        border-radius: 14px;
-        background: #fff8fb;
-        border: 1px solid rgba(38, 23, 34, 0.06);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
-        color: #a46c87;
-      }
-
-      .cell.mark-1 { background: #ffe5f1; color: #ff6ea8; }
-      .cell.mark-2 { background: #efe7ff; color: #8d63ff; }
-      .cell.mark-3 { background: #e6f4ff; color: #59a2ff; }
-
-      .record-card {
-        margin-top: 16px;
-        padding: 16px;
-        border-radius: 22px;
-        background: rgba(255,255,255,0.9);
-        box-shadow: 0 16px 36px rgba(148, 91, 118, 0.14);
-      }
-
-      .record-label {
+      .micro-note {
+        margin-top: 12px;
         font-size: 13px;
         color: var(--muted);
-        margin-bottom: 6px;
       }
 
-      .record-value {
-        font-size: 24px;
-        font-weight: 700;
+      .hero-visual {
+        position: relative;
+        min-height: 700px;
+      }
+
+      .hero-video-card {
+        position: absolute;
+        inset: 0 0 auto auto;
+        width: min(72%, 340px);
+        padding: 10px;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        box-shadow: 0 20px 50px rgba(54, 27, 41, 0.14);
+        backdrop-filter: blur(10px);
+      }
+
+      .hero-video {
+        width: 100%;
+        aspect-ratio: 9 / 19.5;
+        object-fit: cover;
+        border-radius: 22px;
+        background: #f6ebf0;
+      }
+
+      .hero-shot {
+        position: absolute;
+        overflow: hidden;
+        border-radius: 28px;
+        background: var(--surface-strong);
+        border: 1px solid rgba(45, 26, 37, 0.07);
+        box-shadow: 0 24px 56px rgba(50, 24, 37, 0.12);
+      }
+
+      .hero-shot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-shot-main {
+        left: 0;
+        bottom: 0;
+        width: min(72%, 360px);
+      }
+
+      .hero-shot-side {
+        right: 18px;
+        bottom: 54px;
+        width: min(42%, 210px);
+      }
+
+      .mascot-bubble {
+        position: absolute;
+        left: 26px;
+        top: 20px;
+        width: 118px;
+        padding: 10px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(45, 26, 37, 0.08);
+        box-shadow: 0 18px 40px rgba(50, 24, 37, 0.1);
+      }
+
+      .mascot-bubble img {
+        border-radius: 18px;
       }
 
       .section {
         margin-top: 28px;
-        padding: 28px;
-        border-radius: 28px;
-        background: rgba(255,255,255,0.78);
+        padding: 30px;
+        border-radius: 32px;
+        background: rgba(255, 255, 255, 0.8);
         border: 1px solid var(--border);
         box-shadow: 0 10px 34px rgba(37, 20, 31, 0.05);
       }
 
+      .section-intro {
+        max-width: 760px;
+        margin-bottom: 22px;
+      }
+
       .section h2 {
         margin: 0 0 12px;
-        font-size: 30px;
-        letter-spacing: -0.04em;
+        font-size: 32px;
+        letter-spacing: -0.05em;
       }
 
       .section p {
         margin: 0;
-        line-height: 1.7;
         color: var(--muted);
+        line-height: 1.7;
       }
 
-      .feature-grid {
+      .summary-grid,
+      .feature-grid,
+      .gallery-grid,
+      .story-grid,
+      .faq-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 18px;
       }
 
-      .feature-card {
-        padding: 22px;
+      .summary-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .summary-card,
+      .feature-card,
+      .story-card,
+      .faq-item,
+      .shot-card {
         border-radius: var(--radius-lg);
         background: var(--surface-strong);
         border: 1px solid var(--border);
       }
 
-      .feature-card h3 {
+      .summary-card,
+      .feature-copy,
+      .story-card,
+      .faq-item {
+        padding: 22px;
+      }
+
+      .summary-card strong,
+      .story-card strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .feature-card {
+        overflow: hidden;
+      }
+
+      .feature-card img {
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        object-fit: cover;
+        background: #f8eef3;
+      }
+
+      .feature-copy h3,
+      .faq-item h3 {
         margin: 0 0 10px;
         font-size: 22px;
         letter-spacing: -0.03em;
       }
 
-      .feature-card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.7;
+      .gallery-grid {
+        grid-template-columns: 1.2fr 0.8fr 0.8fr;
+        align-items: start;
       }
 
-      .proof {
+      .shot-card {
+        overflow: hidden;
+      }
+
+      .shot-card img {
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        object-fit: cover;
+        background: #f8eef3;
+      }
+
+      .shot-card figcaption {
+        padding: 16px 18px 18px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .story-grid {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        align-items: center;
+      }
+
+      .story-card {
+        background:
+          radial-gradient(circle at top right, rgba(143, 199, 255, 0.22), transparent 40%),
+          linear-gradient(180deg, #fffefe, #fff7fa);
+      }
+
+      .story-list {
+        margin: 18px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .story-list li {
+        margin-bottom: 8px;
+      }
+
+      .mascot-stack {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
       }
 
-      .quote {
-        padding: 22px;
-        border-radius: var(--radius-lg);
-        background: linear-gradient(180deg, #fffefe, #fff7fa);
+      .mascot-panel {
+        padding: 18px;
+        border-radius: 28px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.75));
         border: 1px solid var(--border);
       }
 
-      .quote strong {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 18px;
+      .mascot-panel img {
+        width: 100%;
+        border-radius: 20px;
       }
 
-      .faq-list {
-        display: grid;
-        gap: 14px;
-      }
-
-      .faq-item {
-        padding: 18px 20px;
-        border-radius: 18px;
-        background: var(--surface-strong);
-        border: 1px solid var(--border);
-      }
-
-      .faq-item h3 {
-        margin: 0 0 8px;
-        font-size: 18px;
-      }
-
-      .faq-item p {
-        margin: 0;
+      .faq-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .footer {
@@ -317,47 +497,83 @@
         font-size: 14px;
       }
 
-      @media (max-width: 920px) {
+      @media (max-width: 1040px) {
         .hero,
         .feature-grid,
-        .proof {
+        .gallery-grid,
+        .story-grid,
+        .faq-grid,
+        .summary-grid {
           grid-template-columns: 1fr;
         }
 
-        .hero-card {
-          min-height: 500px;
+        .hero-visual {
+          min-height: 820px;
         }
 
-        .phone {
-          position: relative;
-          right: auto;
-          width: min(100%, 360px);
-          margin: 24px auto 0;
+        .hero-video-card {
+          right: 0;
+        }
+
+        .hero-shot-main {
+          width: min(78%, 390px);
+        }
+
+        .hero-shot-side {
+          width: min(46%, 220px);
         }
       }
 
-      @media (max-width: 640px) {
+      @media (max-width: 720px) {
         .page {
-          width: min(100vw - 18px, 1120px);
+          width: min(100vw - 18px, 1180px);
           padding-top: 10px;
         }
 
         .hero,
         .section {
           padding: 20px;
-          border-radius: 22px;
+          border-radius: 24px;
         }
 
-        .subhead {
-          font-size: 18px;
+        .brand-row {
+          align-items: flex-start;
+          flex-direction: column;
         }
 
-        .hero-card {
-          min-height: auto;
+        .hero-points {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-row {
+          flex-direction: column;
         }
 
         .button {
           width: 100%;
+        }
+
+        .hero-visual {
+          min-height: 700px;
+        }
+
+        .hero-video-card {
+          width: min(70%, 260px);
+        }
+
+        .hero-shot-main {
+          width: min(74%, 320px);
+        }
+
+        .hero-shot-side {
+          width: min(44%, 170px);
+          right: 0;
+          bottom: 38px;
+        }
+
+        .mascot-bubble {
+          width: 92px;
+          left: 10px;
         }
       }
     </style>
@@ -365,172 +581,364 @@
   <body>
     <main class="page">
       <section class="hero">
-        <div>
-          <div class="eyebrow">MoodFlow for iPhone</div>
-          <h1>Mood Tracker and Emotion Journal for Real Feelings</h1>
+        <div class="hero-copy">
+          <div class="brand-row">
+            <img
+              class="app-badge"
+              src="assets/ui/app-icon.png"
+              alt="MoodFlow app icon"
+              width="1023"
+              height="1024"
+            />
+            <div class="eyebrow">MoodFlow for iPhone</div>
+          </div>
+          <h1>MoodFlow - Mood Tracker and Emotion Journal for iPhone</h1>
           <p class="subhead">
-            MoodFlow helps you log feelings quickly, choose richer emotional tags,
-            and understand emotional patterns over time in a calm, visual way.
+            MoodFlow is an iPhone mood tracker and emotion journal for daily mood
+            tracking, helping you log feelings quickly, capture detailed emotions,
+            and understand emotional patterns over time.
           </p>
           <div class="cta-row">
-            <a class="button button-primary" href="https://apps.apple.com/us/app/id6755678705" target="_blank" rel="noreferrer">
+            <a
+              class="button button-primary"
+              href="https://apps.apple.com/us/app/id6755678705"
+              target="_blank"
+              rel="noreferrer"
+            >
               Download on the App Store
             </a>
-            <a class="button button-secondary" href="#faq">How it works</a>
+            <a class="button button-secondary" href="#product-tour">See the product</a>
           </div>
+          <p class="micro-note">
+            Launch note: replace the primary App Store link with your Emotion Insights
+            CPP URL when it is ready so external referrals land on the most relevant product page.
+          </p>
+          <ul class="hero-points">
+            <li>
+              <strong>Daily mood tracking</strong>
+              Build a lightweight habit for checking in without writing a full diary every day.
+            </li>
+            <li>
+              <strong>Log feelings clearly</strong>
+              Record mood, intensity, and richer emotion tags in a few taps.
+            </li>
+            <li>
+              <strong>Emotion journal, not just scores</strong>
+              Go beyond a basic mood tracker with more expressive emotional language.
+            </li>
+            <li>
+              <strong>Spot emotional patterns</strong>
+              Review calendar views, stats, and trends to understand how emotions change over time.
+            </li>
+          </ul>
         </div>
-        <div class="hero-card">
-          <div class="phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <div class="calendar">
-                <div class="calendar-title">March 2026</div>
-                <div class="grid">
-                  <div class="cell"></div>
-                  <div class="cell"></div>
-                  <div class="cell"></div>
-                  <div class="cell mark-3">3</div>
-                  <div class="cell mark-1">4</div>
-                  <div class="cell mark-2">5</div>
-                  <div class="cell">6</div>
-                  <div class="cell mark-1">7</div>
-                  <div class="cell">8</div>
-                  <div class="cell mark-3">9</div>
-                  <div class="cell mark-1">10</div>
-                  <div class="cell">11</div>
-                  <div class="cell mark-2">12</div>
-                  <div class="cell">13</div>
-                  <div class="cell mark-3">14</div>
-                  <div class="cell">15</div>
-                  <div class="cell mark-1">16</div>
-                  <div class="cell">17</div>
-                  <div class="cell">18</div>
-                  <div class="cell mark-3">19</div>
-                  <div class="cell">20</div>
-                </div>
-              </div>
-              <div class="record-card">
-                <div class="record-label">Today</div>
-                <div class="record-value">Joy · Grateful</div>
-              </div>
+        <div class="hero-visual" aria-label="MoodFlow product preview">
+          <div class="mascot-bubble">
+            <img
+              src="assets/ui/mascot-anxious.png"
+              alt="MoodFlow mascot representing anxious feelings"
+              width="1024"
+              height="1024"
+            />
+          </div>
+          <div class="hero-video-card">
+            <video
+              class="hero-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="none"
+              controls
+              poster="assets/screenshots/live-app.png"
+            >
+              <source src="assets/video/moodflow-demo.mov" type="video/quicktime" />
+            </video>
+          </div>
+          <figure class="hero-shot hero-shot-main">
+            <img
+              src="assets/screenshots/hero-overview.png"
+              alt="MoodFlow mood tracker overview screen"
+              width="1284"
+              height="2778"
+            />
+          </figure>
+          <figure class="hero-shot hero-shot-side">
+            <img
+              src="assets/screenshots/trend-view.png"
+              alt="MoodFlow emotional patterns trend screen"
+              width="1284"
+              height="2778"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-intro">
+          <h2>What MoodFlow helps you do</h2>
+          <p>
+            MoodFlow helps iPhone users build a simple daily mood tracking habit,
+            log feelings without friction, and use an emotion journal to understand
+            emotional patterns instead of saving isolated check-ins.
+          </p>
+        </div>
+        <div class="summary-grid">
+          <article class="summary-card">
+            <strong>Track how you feel each day</strong>
+            <p>
+              Use a visual monthly view to keep a consistent mood tracker routine that feels calm and sustainable.
+            </p>
+          </article>
+          <article class="summary-card">
+            <strong>Capture more detailed emotions</strong>
+            <p>
+              MoodFlow supports richer emotional labels so you can log feelings that are more nuanced than happy or sad.
+            </p>
+          </article>
+          <article class="summary-card">
+            <strong>Turn entries into insight</strong>
+            <p>
+              Charts, summaries, and trends make emotional patterns easier to notice and reflect on over time.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="product-tour">
+        <div class="section-intro">
+          <h2>How MoodFlow works</h2>
+          <p>
+            MoodFlow is built for people who want a more complete mood tracker:
+            quick daily entries, richer emotional language, and a clearer picture
+            of how feelings change over time.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <img
+              src="assets/screenshots/checkin-detail.png"
+              alt="MoodFlow check-in screen for logging feelings and emotions"
+              width="1284"
+              height="2778"
+              loading="lazy"
+            />
+            <div class="feature-copy">
+              <h3>Log feelings in seconds</h3>
+              <p>
+                Use a guided check-in flow to log feelings, mood intensity, and short notes in a way that supports daily mood tracking.
+              </p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <img
+              src="assets/screenshots/emotion-jar.png"
+              alt="MoodFlow emotion journal jar view with emotional memories"
+              width="1284"
+              height="2778"
+              loading="lazy"
+            />
+            <div class="feature-copy">
+              <h3>Track more detailed emotions</h3>
+              <p>
+                Go beyond basic happy-or-sad check-ins with richer emotion labels and a more personal emotion journal experience.
+              </p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <img
+              src="assets/screenshots/stats-dashboard.png"
+              alt="MoodFlow statistics dashboard showing mood insights"
+              width="1284"
+              height="2778"
+              loading="lazy"
+            />
+            <div class="feature-copy">
+              <h3>See emotional patterns</h3>
+              <p>
+                Review records, totals, and distributions to understand recurring emotions and emotional patterns over time.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-intro">
+          <h2>Why MoodFlow is more than a basic mood tracker</h2>
+          <p>
+            Many mood tracking apps stop at one-tap check-ins. MoodFlow is designed
+            to help users express what they actually feel, keep a richer emotional record,
+            and notice patterns that would otherwise stay hidden.
+          </p>
+        </div>
+        <div class="story-grid">
+          <article class="story-card">
+            <strong>A calmer way to reflect</strong>
+            <p>
+              MoodFlow is for iPhone users who want a thoughtful mood tracker, a more expressive emotion journal,
+              and a lightweight way to reflect without writing a long diary every day.
+            </p>
+            <ul class="story-list">
+              <li>Daily mood tracking that feels visual instead of clinical.</li>
+              <li>Richer emotion tags for feelings like calm, grateful, anxious, relieved, and overwhelmed.</li>
+              <li>Trends and summaries that help people understand emotional patterns over time.</li>
+            </ul>
+          </article>
+          <div class="mascot-stack">
+            <div class="mascot-panel">
+              <img
+                src="assets/ui/mascot-anxious.png"
+                alt="MoodFlow anxious mascot illustration"
+                width="1024"
+                height="1024"
+                loading="lazy"
+              />
+            </div>
+            <div class="mascot-panel">
+              <img
+                src="assets/ui/mascot-tired.png"
+                alt="MoodFlow tired mascot illustration"
+                width="1024"
+                height="1024"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
       </section>
 
       <section class="section">
-        <h2>Why people use MoodFlow</h2>
-        <p>
-          MoodFlow is designed for people who want more than a basic happy-or-sad
-          check-in. It combines daily mood tracking, richer emotional expression,
-          and visual insights that help users understand what they are feeling over time.
-        </p>
-      </section>
-
-      <section class="section">
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3>Track feelings each day</h3>
-            <p>
-              Use a clear monthly view to log moods, notes, and intensity in a way
-              that feels fast and sustainable.
-            </p>
-          </article>
-          <article class="feature-card">
-            <h3>Choose richer emotions</h3>
-            <p>
-              Go beyond basic mood labels with emotional tags that better match
-              real life, including gratitude, overwhelm, relief, and more.
-            </p>
-          </article>
-          <article class="feature-card">
-            <h3>See emotional patterns</h3>
-            <p>
-              Turn daily logs into mood insights with charts, trends, and a visual
-              record of how your feelings change over time.
-            </p>
-          </article>
+        <div class="section-intro">
+          <h2>Product screens</h2>
+          <p>
+            These screens show how MoodFlow combines a mood tracker, emotion journal,
+            and emotional pattern review into one simple iPhone experience.
+          </p>
         </div>
-      </section>
-
-      <section class="section">
-        <h2>Who MoodFlow is for</h2>
-        <p>
-          MoodFlow is for iPhone users who want a calm and visual mood tracker,
-          an emotion journal that feels personal, and a simple way to reflect on
-          emotional patterns without writing a long diary every day.
-        </p>
-      </section>
-
-      <section class="section">
-        <h2>What users notice first</h2>
-        <div class="proof">
-          <article class="quote">
-            <strong>Richer emotion options</strong>
-            <p>
-              Users often say they want an app that feels more expressive than a
-              basic mood tracker. MoodFlow is built around more nuanced emotional tags.
-            </p>
-          </article>
-          <article class="quote">
-            <strong>Clear emotional patterns</strong>
-            <p>
-              Many users want to understand what they are feeling over time, not
-              just save one-off check-ins. MoodFlow focuses on both logging and insight.
-            </p>
-          </article>
+        <div class="gallery-grid">
+          <figure class="shot-card">
+            <img
+              src="assets/screenshots/live-app.png"
+              alt="MoodFlow live app screenshot from iPhone"
+              width="1206"
+              height="2622"
+              loading="lazy"
+            />
+            <figcaption>
+              A live in-app view of daily mood tracking, with a fast check-in path and visual history.
+            </figcaption>
+          </figure>
+          <figure class="shot-card">
+            <img
+              src="assets/screenshots/trend-view.png"
+              alt="MoodFlow trend screen showing emotional patterns"
+              width="1284"
+              height="2778"
+              loading="lazy"
+            />
+            <figcaption>
+              Weekly and monthly trends help users understand emotional patterns instead of isolated entries.
+            </figcaption>
+          </figure>
+          <figure class="shot-card">
+            <img
+              src="assets/screenshots/streaks-view.png"
+              alt="MoodFlow streak tracking screen"
+              width="1284"
+              height="2778"
+              loading="lazy"
+            />
+            <figcaption>
+              Streaks and visual milestones make daily mood tracking feel consistent and motivating.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
       <section class="section" id="faq">
-        <h2>Frequently asked questions</h2>
-        <div class="faq-list">
+        <div class="section-intro">
+          <h2>Frequently asked questions</h2>
+          <p>
+            The FAQ below keeps the page readable for people while making the product definition easier for AI systems and search engines to understand.
+          </p>
+        </div>
+        <div class="faq-grid">
           <article class="faq-item">
             <h3>What is MoodFlow?</h3>
             <p>
-              MoodFlow is a mood tracker and emotion journal for iPhone that helps
-              users log feelings quickly and understand emotional patterns over time.
+              MoodFlow is a mood tracker and emotion journal for iPhone. It is built
+              for daily mood tracking, helping people log feelings quickly and understand
+              emotional patterns over time.
             </p>
           </article>
           <article class="faq-item">
             <h3>How is MoodFlow different from a basic mood tracker?</h3>
             <p>
-              MoodFlow combines daily tracking, richer emotion choices, and visual
-              mood insights so users can express more than basic moods and see trends more clearly.
+              A basic mood tracker often records a simple mood score. MoodFlow adds
+              richer emotion labels, short notes, and a more visual emotion journal
+              experience so people can understand more than a one-word check-in.
             </p>
           </article>
           <article class="faq-item">
             <h3>Can I track detailed emotions, not just happy or sad?</h3>
             <p>
-              Yes. MoodFlow is designed to support more expressive emotional tags
-              so users can choose feelings that are closer to their real experience.
+              Yes. MoodFlow is designed for more expressive emotional tags, so you
+              can track detailed emotions like calm, grateful, anxious, relieved, or overwhelmed.
             </p>
           </article>
           <article class="faq-item">
             <h3>Does MoodFlow show emotional patterns over time?</h3>
             <p>
-              Yes. MoodFlow helps users see changes over time with a clear monthly
-              view, mood logs, and emotional insights.
+              Yes. MoodFlow helps users see emotional patterns over time with a
+              monthly view, daily logs, and visual summaries that make changes easier to notice.
+            </p>
+          </article>
+          <article class="faq-item">
+            <h3>Is MoodFlow useful if I do not want to write a full diary every day?</h3>
+            <p>
+              Yes. MoodFlow is designed to help people log feelings quickly, so it
+              works well for users who want a lightweight emotion journal instead of a long daily diary.
+            </p>
+          </article>
+          <article class="faq-item">
+            <h3>Who is MoodFlow for?</h3>
+            <p>
+              MoodFlow is for iPhone users who want a more thoughtful mood tracker,
+              whether they are building a reflection habit, noticing recurring emotions,
+              or looking for a simple way to understand their feelings over time.
             </p>
           </article>
         </div>
       </section>
 
       <section class="section">
-        <h2>Download MoodFlow</h2>
-        <p>
-          Start tracking moods, logging feelings, and building a clearer picture of
-          your emotional patterns.
-        </p>
+        <div class="section-intro">
+          <h2>Start with MoodFlow</h2>
+          <p>
+            Start daily mood tracking, log feelings in a few taps, and build a clearer
+            picture of your emotional patterns with MoodFlow for iPhone.
+          </p>
+        </div>
         <div class="cta-row">
-          <a class="button button-primary" href="https://apps.apple.com/us/app/id6755678705" target="_blank" rel="noreferrer">
+          <a
+            class="button button-primary"
+            href="https://apps.apple.com/us/app/id6755678705"
+            target="_blank"
+            rel="noreferrer"
+          >
             Open on the App Store
           </a>
+          <a class="button button-secondary" href="#faq">Read the FAQ</a>
         </div>
+        <p class="micro-note">
+          Recommended before launch: swap both App Store CTA links to your Emotion
+          Insights CPP URL, and replace the current relative social preview image with a final production OG image URL.
+        </p>
       </section>
 
       <footer class="footer">
-        MoodFlow · Mood Tracker · Emotion Journal · Feelings Log · Mood Insights
+        MoodFlow · Mood Tracker · Emotion Journal · Log Feelings · Daily Mood Tracking · Emotional Patterns
       </footer>
     </main>
   </body>
