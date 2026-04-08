@@ -13,6 +13,8 @@
       content="mood tracker, emotion journal, log feelings, emotional patterns, daily mood tracking, mood journal app, iPhone mood tracker"
     />
     <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://yetaimei.github.io/moodflow-site/" />
+    <meta property="og:url" content="https://yetaimei.github.io/moodflow-site/" />
     <meta property="og:title" content="MoodFlow - Mood Tracker and Emotion Journal for iPhone" />
     <meta
       property="og:description"
@@ -34,6 +36,7 @@
       name="twitter:image"
       content="https://yetaimei.github.io/moodflow-site/assets/screenshots/en-01-hero-1284x2778.png"
     />
+    <meta name="twitter:url" content="https://yetaimei.github.io/moodflow-site/" />
     <link rel="icon" href="assets/ui/app-icon.png" />
     <link rel="apple-touch-icon" href="assets/ui/app-icon.png" />
     <!-- Google tag (gtag.js) -->
@@ -51,12 +54,52 @@
         "@context": "https://schema.org",
         "@graph": [
           {
+            "@type": "Organization",
+            "@id": "https://yetaimei.github.io/moodflow-site/#organization",
+            "name": "MoodFlow by Leilei Zhang",
+            "url": "https://yetaimei.github.io/moodflow-site/",
+            "logo": "https://yetaimei.github.io/moodflow-site/assets/ui/app-icon.png",
+            "sameAs": [
+              "https://apps.apple.com/us/app/moodflow-mood-tracker-journal/id6755678705?ppid=54b1b9c3-e3b8-4543-8ce9-d850d7b2e02f"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://yetaimei.github.io/moodflow-site/#website",
+            "url": "https://yetaimei.github.io/moodflow-site/",
+            "name": "MoodFlow Official Site",
+            "publisher": {
+              "@id": "https://yetaimei.github.io/moodflow-site/#organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://yetaimei.github.io/moodflow-site/#webpage",
+            "url": "https://yetaimei.github.io/moodflow-site/",
+            "name": "MoodFlow - Mood Tracker and Emotion Journal for iPhone",
+            "isPartOf": {
+              "@id": "https://yetaimei.github.io/moodflow-site/#website"
+            },
+            "about": {
+              "@id": "https://yetaimei.github.io/moodflow-site/#app"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://yetaimei.github.io/moodflow-site/assets/screenshots/en-01-hero-1284x2778.png"
+            }
+          },
+          {
             "@type": "SoftwareApplication",
+            "@id": "https://yetaimei.github.io/moodflow-site/#app",
             "name": "MoodFlow",
+            "url": "https://yetaimei.github.io/moodflow-site/",
             "applicationCategory": "HealthApplication",
             "operatingSystem": "iOS",
             "image": "https://yetaimei.github.io/moodflow-site/assets/screenshots/en-01-hero-1284x2778.png",
             "description": "MoodFlow is a mood tracker and emotion journal for iPhone that helps people log feelings, track detailed emotions, and understand emotional patterns over time.",
+            "publisher": {
+              "@id": "https://yetaimei.github.io/moodflow-site/#organization"
+            },
             "offers": {
               "@type": "Offer",
               "price": "0",

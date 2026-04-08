@@ -4,12 +4,16 @@ Allow: /
 User-agent: GPTBot
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 User-agent: Googlebot
 Allow: /
 
 User-agent: *
 Allow: /
 
-# Add a Sitemap line after you publish to your final production URL.
-# Example:
-# Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://yetaimei.github.io/moodflow-site/sitemap.xml
