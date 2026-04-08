@@ -322,12 +322,17 @@
 
       .shot img,
       .shot video {
-        width: 100%;
+        width: min(100%, 240px);
+        height: auto;
+        object-fit: contain;
+        margin-inline: auto;
         border-radius: 26px;
         box-shadow: 0 16px 34px rgba(52, 27, 40, 0.1);
       }
 
       .shot figcaption {
+        max-width: 240px;
+        margin-inline: auto;
         margin-top: 10px;
         color: var(--muted);
         font-size: 14px;
