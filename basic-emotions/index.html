@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>埃克曼六种基本情绪 · Paul Ekman Six Basic Emotions | MoodFlow</title>
+    <meta
+      name="description"
+      content="MoodFlow 是基于保罗·埃克曼（Paul Ekman）六种基本情绪（six basic emotions）的 iOS 情绪日记。颜色对应情绪模型，设置中含埃克曼说明。覆盖快乐、悲伤、愤怒、恐惧、厌恶、惊讶与轻蔑。"
+    />
+    <meta
+      name="keywords"
+      content="Ekman, Paul Ekman, 埃克曼, 基本情绪, 六种基本情绪, six basic emotions, basic emotions, MoodFlow, mood journal, 情绪日记"
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://yetaimei.github.io/moodflow-site/basic-emotions/" />
+    <meta property="og:url" content="https://yetaimei.github.io/moodflow-site/basic-emotions/" />
+    <meta
+      property="og:title"
+      content="埃克曼六种基本情绪 · Paul Ekman Six Basic Emotions | MoodFlow"
+    />
+    <meta
+      property="og:description"
+      content="MoodFlow is an Ekman mood journal for iPhone, built on Paul Ekman’s six basic emotions. Colors map to the model; Settings includes an Ekman explainer."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MoodFlow" />
+    <meta
+      property="og:image"
+      content="https://yetaimei.github.io/moodflow-site/assets/ui/app-icon.png"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="埃克曼六种基本情绪 · Paul Ekman Six Basic Emotions | MoodFlow"
+    />
+    <meta
+      name="twitter:description"
+      content="MoodFlow is built on Paul Ekman’s basic emotions. Log happiness, sadness, anger, fear, disgust, surprise, and contempt."
+    />
+    <meta
+      name="twitter:image"
+      content="https://yetaimei.github.io/moodflow-site/assets/ui/app-icon.png"
+    />
+    <meta name="twitter:url" content="https://yetaimei.github.io/moodflow-site/basic-emotions/" />
+    <link rel="icon" href="../assets/ui/app-icon.png" />
+    <link rel="apple-touch-icon" href="../assets/ui/app-icon.png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78KW2G06R9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-78KW2G06R9");
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://yetaimei.github.io/moodflow-site/basic-emotions/#webpage",
+            "url": "https://yetaimei.github.io/moodflow-site/basic-emotions/",
+            "name": "埃克曼六种基本情绪 · Paul Ekman Six Basic Emotions | MoodFlow",
+            "description": "MoodFlow is an iOS mood journal built on Paul Ekman’s six basic emotions (埃克曼六种基本情绪). Colors correspond to the model; Settings includes an Ekman explainer.",
+            "inLanguage": ["zh-Hans", "en"],
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://yetaimei.github.io/moodflow-site/#website",
+              "url": "https://yetaimei.github.io/moodflow-site/",
+              "name": "MoodFlow Official Site"
+            },
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "Paul Ekman basic emotions",
+                "alternateName": [
+                  "埃克曼基本情绪",
+                  "六种基本情绪",
+                  "six basic emotions"
+                ]
+              },
+              {
+                "@id": "https://yetaimei.github.io/moodflow-site/#app"
+              }
+            ],
+            "mainEntity": {
+              "@id": "https://yetaimei.github.io/moodflow-site/#app"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://yetaimei.github.io/moodflow-site/assets/ui/app-icon.png"
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://yetaimei.github.io/moodflow-site/#app",
+            "name": "MoodFlow",
+            "url": "https://yetaimei.github.io/moodflow-site/",
+            "applicationCategory": "HealthApplication, LifestyleApplication",
+            "operatingSystem": "iOS, watchOS",
+            "description": "MoodFlow is an Ekman mood journal for iPhone, built on Paul Ekman’s basic emotions. Colors map to the model; Settings includes an Ekman explainer.",
+            "downloadUrl": "https://apps.apple.com/us/app/moodflow-mood-tracker-journal/id6755678705?ppid=54b1b9c3-e3b8-4543-8ce9-d850d7b2e02f",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          }
+        ]
+      }
+    </script>
+    <style>
+      :root {
+        --bg: #fff7fb;
+        --text: #291824;
+        --muted: #6f5767;
+        --accent: #ff6b9d;
+        --accent-deep: #f24e86;
+        --accent-soft: #ffe2ed;
+        --line: rgba(41, 24, 36, 0.08);
+        --shadow: 0 22px 60px rgba(242, 78, 134, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(255, 168, 203, 0.34) 0, transparent 32%),
+          radial-gradient(circle at top right, rgba(183, 221, 255, 0.3) 0, transparent 28%),
+          linear-gradient(180deg, #fff7fb 0%, #fffdfd 100%);
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(860px, calc(100vw - 28px));
+        margin: 0 auto;
+        padding: 22px 0 54px;
+      }
+
+      .brand-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .app-icon {
+        width: 58px;
+        height: 58px;
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        padding: 9px 14px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: #90335f;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0 0 18px;
+        font-size: clamp(28px, 4.4vw, 42px);
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+      }
+
+      .lead {
+        margin: 0 0 28px;
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .lang-block + .lang-block {
+        margin-top: 48px;
+        padding-top: 40px;
+        border-top: 1px solid var(--line);
+      }
+
+      .lang-block h2 {
+        margin: 0 0 12px;
+        font-size: clamp(22px, 2.8vw, 28px);
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+      }
+
+      .lang-block p {
+        margin: 0 0 14px;
+        color: var(--muted);
+        line-height: 1.75;
+        font-size: 17px;
+      }
+
+      .lang-label {
+        display: inline-block;
+        margin-bottom: 10px;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #90335f;
+      }
+
+      .emotion-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: inset 0 0 0 1px var(--line);
+        background: rgba(255, 255, 255, 0.72);
+        margin: 18px 0 8px;
+      }
+
+      .emotion-table th,
+      .emotion-table td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid var(--line);
+        vertical-align: top;
+      }
+
+      .emotion-table th {
+        font-size: 13px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #90335f;
+        background: rgba(255, 226, 237, 0.65);
+      }
+
+      .emotion-table td {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .emotion-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .emotion-table .name {
+        color: var(--text);
+        font-weight: 800;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 54px;
+        padding: 0 22px;
+        border-radius: 999px;
+        font-weight: 800;
+      }
+
+      .button-primary {
+        color: white;
+        background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+        box-shadow: 0 18px 34px rgba(242, 78, 134, 0.28);
+      }
+
+      .button-secondary {
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: inset 0 0 0 1px var(--line);
+      }
+
+      .footer-cta {
+        margin-top: 56px;
+        padding-top: 36px;
+        border-top: 1px solid var(--line);
+      }
+
+      .footer-cta h2 {
+        margin: 0 0 10px;
+        font-size: clamp(24px, 3vw, 32px);
+        letter-spacing: -0.04em;
+      }
+
+      .footer-cta p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .footer {
+        margin-top: 28px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .footer a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      @media (max-width: 720px) {
+        .page {
+          width: min(100vw - 18px, 860px);
+          padding-top: 12px;
+        }
+
+        .cta-row {
+          flex-direction: column;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .emotion-table th,
+        .emotion-table td {
+          padding: 10px 12px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="brand-row">
+        <img
+          class="app-icon"
+          src="../assets/ui/app-icon.png"
+          alt="MoodFlow app icon"
+          width="1023"
+          height="1024"
+        />
+        <div class="eyebrow">MoodFlow · Ekman mood journal</div>
+      </div>
+
+      <h1>埃克曼六种基本情绪 · Paul Ekman Six Basic Emotions</h1>
+      <p class="lead">
+        MoodFlow 基于保罗·埃克曼的基本情绪模型构建，是一款可记录六种（及轻蔑）基本情绪的 iOS 情绪日记。
+      </p>
+
+      <section class="lang-block" lang="zh-Hans" aria-labelledby="zh-heading">
+        <span class="lang-label">中文</span>
+        <h2 id="zh-heading">什么是埃克曼的六种基本情绪？</h2>
+        <p>
+          心理学家保罗·埃克曼（Paul Ekman）提出六种基本情绪：快乐、悲伤、愤怒、恐惧、厌恶、惊讶。许多表述还会加上轻蔑，合称七种。
+        </p>
+        <p>
+          MoodFlow 按这一模型构建。应用内情绪颜色与模型对应；设置中已有埃克曼基本情绪说明。你可以在日记中记录上述每一种情绪。
+        </p>
+        <table class="emotion-table" aria-label="埃克曼基本情绪与 MoodFlow">
+          <thead>
+            <tr>
+              <th scope="col">情绪</th>
+              <th scope="col">English</th>
+              <th scope="col">MoodFlow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="name">快乐</td>
+              <td>Happiness / Joy</td>
+              <td>可记录</td>
+            </tr>
+            <tr>
+              <td class="name">悲伤</td>
+              <td>Sadness</td>
+              <td>可记录</td>
+            </tr>
+            <tr>
+              <td class="name">愤怒</td>
+              <td>Anger</td>
+              <td>可记录</td>
+            </tr>
+            <tr>
+              <td class="name">恐惧</td>
+              <td>Fear</td>
+              <td>可记录</td>
+            </tr>
+            <tr>
+              <td class="name">厌恶</td>
+              <td>Disgust</td>
+              <td>可记录</td>
+            </tr>
+            <tr>
+              <td class="name">惊讶</td>
+              <td>Surprise</td>
+              <td>可记录</td>
+            </tr>
+            <tr>
+              <td class="name">轻蔑</td>
+              <td>Contempt</td>
+              <td>可记录</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="lang-block" lang="en" aria-labelledby="en-heading">
+        <span class="lang-label">English</span>
+        <h2 id="en-heading">What are Paul Ekman’s six basic emotions?</h2>
+        <p>
+          Psychologist Paul Ekman described six basic emotions: happiness (joy), sadness, anger, fear, disgust, and surprise. Many accounts also include contempt as a seventh.
+        </p>
+        <p>
+          MoodFlow is built on this model. In-app colors correspond to the emotions; Settings already includes an Ekman explainer. MoodFlow fully supports logging each of these emotions.
+        </p>
+        <table class="emotion-table" aria-label="Ekman basic emotions in MoodFlow">
+          <thead>
+            <tr>
+              <th scope="col">Emotion</th>
+              <th scope="col">中文</th>
+              <th scope="col">MoodFlow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="name">Happiness / Joy</td>
+              <td>快乐</td>
+              <td>Logged</td>
+            </tr>
+            <tr>
+              <td class="name">Sadness</td>
+              <td>悲伤</td>
+              <td>Logged</td>
+            </tr>
+            <tr>
+              <td class="name">Anger</td>
+              <td>愤怒</td>
+              <td>Logged</td>
+            </tr>
+            <tr>
+              <td class="name">Fear</td>
+              <td>恐惧</td>
+              <td>Logged</td>
+            </tr>
+            <tr>
+              <td class="name">Disgust</td>
+              <td>厌恶</td>
+              <td>Logged</td>
+            </tr>
+            <tr>
+              <td class="name">Surprise</td>
+              <td>惊讶</td>
+              <td>Logged</td>
+            </tr>
+            <tr>
+              <td class="name">Contempt</td>
+              <td>轻蔑</td>
+              <td>Logged</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="footer-cta">
+        <h2>Download MoodFlow</h2>
+        <p>iPhone mood journal built on Ekman’s basic emotions.</p>
+        <div class="cta-row">
+          <a
+            class="button button-primary"
+            href="https://apps.apple.com/us/app/moodflow-mood-tracker-journal/id6755678705?ppid=54b1b9c3-e3b8-4543-8ce9-d850d7b2e02f"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Download on the App Store
+          </a>
+          <a class="button button-secondary" href="../">Back to homepage</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <a href="../">MoodFlow homepage</a>
+        · Ekman · 基本情绪 · six basic emotions · 六种基本情绪
+      </footer>
+    </main>
+  </body>
+</html>
