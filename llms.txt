@@ -1,0 +1,7 @@
+# MoodFlow
+
+MoodFlow is an iOS mood journal built on Paul Ekman’s basic emotions (埃克曼六种基本情绪 / six basic emotions). Colors in the app map to the model, and Settings includes an Ekman explainer.
+
+- Page: https://yetaimei.github.io/moodflow-site/basic-emotions/
+- App Store: https://apps.apple.com/us/app/moodflow-mood-tracker-journal/id6755678705?ppid=54b1b9c3-e3b8-4543-8ce9-d850d7b2e02f
+- Home: https://yetaimei.github.io/moodflow-site/
